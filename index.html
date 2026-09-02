@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CyberPredict predictive cybercrime intelligence platform">
+  <title>CyberPredict | Predict. Prioritize. Prevent.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="terminal-theme.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand-lockup">
+        <div class="brand-mark"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Ashoka emblem"></div>
+          <div><strong>CYBER<span>PREDICT</span></strong><small>SECURE INTELLIGENCE TERMINAL</small></div>
+      </div>
+      <nav class="nav-groups">
+        <div class="nav-label">Workspace</div>
+        <button class="nav-item active" data-view="overview"><span class="nav-icon">&#9632;</span>Overview</button>
+        <button class="nav-item" data-view="cases"><span class="nav-icon">&#9673;</span>Active Cases <b>28</b></button>
+        <button class="nav-item" data-view="clusters"><span class="nav-icon">&#9678;</span>Case Clusters</button>
+        <button class="nav-item" data-view="risk-map"><span class="nav-icon">&#9678;</span>Risk Map</button>
+        <button class="nav-item" data-view="predictions"><span class="nav-icon">&#10022;</span>Predictions</button>
+        <button class="nav-item" data-view="networks"><span class="nav-icon">&#9707;</span>Fraud Networks</button>
+        <button class="nav-item" data-view="copilot"><span class="nav-icon">&#10024;</span>Copilot</button>
+        <button class="nav-item" data-view="ip-intel"><span class="nav-icon">&#9673;</span>IP Intelligence</button>
+        <button class="nav-item" data-view="alerts"><span class="nav-icon">&#9888;</span>Alerts <b class="alert-count">6</b></button>
+        <button class="nav-item" data-view="reports"><span class="nav-icon">&#9776;</span>Reports</button>
+        <button class="nav-item" data-view="analytics"><span class="nav-icon">&#9636;</span>Analytics</button>
+        <button class="nav-item" data-view="monitoring"><span class="nav-icon">&#9672;</span>Model Monitoring</button>
+        <div class="nav-label secondary-label">Administration</div>
+        <button class="nav-item" data-view="sources"><span class="nav-icon">&#9681;</span>Data Sources</button>
+        <button class="nav-item" data-view="settings"><span class="nav-icon">&#9881;</span>Settings</button>
+        <button class="nav-item" data-view="research"><span class="nav-icon">&#9733;</span>Research &amp; References</button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="system-state"><span class="status-dot"></span><div><strong>System operational</strong><small>All services nominal</small></div></div>
+        <div class="privacy-note">Prototype uses anonymized/<br>synthetic data for demonstration.</div>
+        <div class="user-mini"><div class="avatar">AK</div><div><strong>Arjun Kumar</strong><small>Senior Investigator</small></div><span class="more">&#8942;</span></div>
+      </div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <div class="gov-lockup" aria-label="Government of India"><img class="gov-emblem" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Ashoka emblem"><span><strong>GOVERNMENT OF INDIA</strong><small>भारत सरकार</small></span></div>
+        <div class="mobile-brand"><div class="brand-mark"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Ashoka emblem"></div><strong>CYBER<span>PREDICT</span></strong></div>
+        <div class="breadcrumb"><span>Command Center</span><i>/</i><strong id="breadcrumb-current">Overview</strong></div>
+        <div class="top-actions">
+          <label class="global-search"><span>&#8981;</span><input id="global-search" placeholder="Search cases, accounts, ATMs..." aria-label="Global search"><kbd>Ctrl K</kbd></label>
+          <button class="icon-button" title="Notifications" data-view="alerts"><span class="notification-dot"></span>&#9737;</button>
+          <div class="top-status"><span class="status-dot"></span>Operational</div>
+          <div class="top-user"><div class="avatar">AK</div><div><strong>Arjun Kumar</strong><small>Investigator</small></div><span>&#9662;</span></div>
+        </div>
+      </header>
+      <div id="app" class="view-container"></div>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <div id="modal" class="modal-backdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" data-close-modal>&times;</button><div id="modal-content"></div></div></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
