@@ -3,9 +3,13 @@ from typing import Any
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+from mangum import Mangum
 
 app = FastAPI(title="CyberPredict API", version="0.1.0", description="Decision-support API using anonymized synthetic demo data.")
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:3000", "http://localhost:5173"], allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+
+# Vercel serverless handler
+handler = Mangum(app)
 
 class CopilotRequest(BaseModel):
     question: str = Field(min_length=3, max_length=500)
